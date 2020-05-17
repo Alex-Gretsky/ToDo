@@ -10,8 +10,6 @@ import UIKit
 
 class PopupViewController: UIViewController {
     
-    // MARK: - Objects
-    
     let popupView: UIView = {
         let popup = UIView()
         popup.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -96,6 +94,7 @@ class PopupViewController: UIViewController {
         date.attributedPlaceholder = NSAttributedString(string: "Date and time", attributes:[NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
         return date
     }()
+    
     let blurredBackground: UIVisualEffectView = {
         let blur = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         return blur
@@ -123,6 +122,7 @@ class PopupViewController: UIViewController {
         view.addSubview(doneButton)
         view.addSubview(pencilImage)
     }
+    
     func addLayouts() {
         blurLayout()
         popupViewLayout()
@@ -133,10 +133,12 @@ class PopupViewController: UIViewController {
         taskDateTextFieldLayout()
         pencilImageLayout()
     }
+    
     func blurLayout() {
         blurredBackground.frame = view.bounds
         blurredBackground.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+    
     func taskDateTextFieldLayout() {
         taskDateTextField.translatesAutoresizingMaskIntoConstraints = false
         taskDateTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -144,6 +146,7 @@ class PopupViewController: UIViewController {
         taskDateTextField.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -20).isActive = true
         taskDateTextField.topAnchor.constraint(equalTo: taskTextField.bottomAnchor, constant: 15).isActive = true
     }
+    
     func popupViewLayout() {
         popupView.translatesAutoresizingMaskIntoConstraints = false
         popupView.widthAnchor.constraint(equalToConstant: 360).isActive = true
@@ -151,11 +154,13 @@ class PopupViewController: UIViewController {
         popupView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         popupView.bottomAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: 20).isActive = true
     }
+    
     func titleLabelLayout() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.centerXAnchor.constraint(equalTo: popupView.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: pencilImage.bottomAnchor, constant: 35).isActive = true
     }
+    
     func closeButtonLayout() {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.centerYAnchor.constraint(equalTo: popupView.topAnchor, constant: 30).isActive = true
@@ -163,6 +168,7 @@ class PopupViewController: UIViewController {
         closeButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
     }
+    
     func taskTextFieldLayout() {
         taskTextField.translatesAutoresizingMaskIntoConstraints = false
         taskTextField.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 20).isActive = true
@@ -170,6 +176,7 @@ class PopupViewController: UIViewController {
         taskTextField.centerXAnchor.constraint(equalTo: popupView.centerXAnchor).isActive = true
         taskTextField.centerYAnchor.constraint(equalTo: popupView.centerYAnchor).isActive = true
     }
+    
     func doneButtonLayout() {
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -177,6 +184,7 @@ class PopupViewController: UIViewController {
         doneButton.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -20).isActive = true
         doneButton.topAnchor.constraint(equalTo: taskDateTextField.bottomAnchor, constant: 20).isActive = true
     }
+    
     func pencilImageLayout() {
         pencilImage.translatesAutoresizingMaskIntoConstraints = false
         pencilImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -184,30 +192,38 @@ class PopupViewController: UIViewController {
         pencilImage.widthAnchor.constraint(equalToConstant: 110).isActive = true
         pencilImage.heightAnchor.constraint(equalToConstant: 110).isActive = true
     }
+    
+    // MARK: - Selector methods
+    
     @objc func datePickerChanged(sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM.dd.yyyy HH:mm"
         taskDateTextField.text = formatter.string(from: datePicker.date)
         
     }
+    
     @objc func taskSaver() {
         guard taskTextField.text?.count != 0 else {
             taskTextField.attributedPlaceholder = NSAttributedString(string: "I want to...", attributes:[NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)])
             return
         }
+        
         guard taskDateTextField.text?.count != 0 else {
             taskDateTextField.attributedPlaceholder = NSAttributedString(string: "Date and time", attributes:[NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)])
             return
         }
+        
         DispatchQueue.global(qos: .default).sync {
             saveTask(title: "\(self.taskTextField.text!)", date: "\(self.taskDateTextField.text!)")
         }
+        
         cancelButtonPressed(self)
     }
     
     @objc func endEditing() {
         view.endEditing(true)
     }
+    
     @objc func cancelButtonPressed(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         dismiss(animated: true, completion: nil)

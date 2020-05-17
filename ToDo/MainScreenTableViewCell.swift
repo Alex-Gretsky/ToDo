@@ -12,7 +12,6 @@ class MainScreenTableViewCell: UITableViewCell {
 
     let dateLabel: UILabel = {
         let date = UILabel()
-//        date.font = UIFont(name: "Artbrush", size: 20)
         date.font = UIFont(name: "Caveat", size: 22)
         date.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         date.textAlignment = .center
@@ -21,7 +20,6 @@ class MainScreenTableViewCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let title = UILabel()
-//        title.font = UIFont(name: "Artbrush", size: 20)
         title.font = UIFont(name: "Caveat", size: 22)
         title.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         title.textAlignment = .center
@@ -37,13 +35,14 @@ class MainScreenTableViewCell: UITableViewCell {
         addSubviews()
         titleLayout()
         dateLayout()
-    
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     //MARK: - Layout methods
+    
     func addSubviews() {
         addSubview(dateLabel)
         addSubview(titleLabel)
@@ -61,8 +60,5 @@ class MainScreenTableViewCell: UITableViewCell {
         dateLabel.widthAnchor.constraint(equalToConstant: 160).isActive = true
         dateLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5).isActive = true
         dateLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-
     }
-    
-
 }

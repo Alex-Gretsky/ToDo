@@ -23,6 +23,7 @@ func saveTask(title: String, date: String) {
         print(error.description)
     }
 }
+
 func getTask() {
     let context = getContext()
     let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
@@ -36,10 +37,12 @@ func getTask() {
         print(error.description)
     }
 }
+
 func deleteTask(){
     let context = getContext()
     let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
 }
+
 func getContext() -> NSManagedObjectContext {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     return appDelegate.persistentContainer.viewContext

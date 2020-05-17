@@ -51,9 +51,11 @@ class MainScreenTableViewController: UITableViewController {
         plusButton.widthAnchor.constraint(equalToConstant: 74).isActive = true
         plusButton.heightAnchor.constraint(equalToConstant: 74).isActive = true
     }
+    
     func addSubviews() {
         view.addSubview(plusButton)
     }
+    
     // MARK: - Private methods
     
     @objc private func showPopup() {
@@ -64,7 +66,9 @@ class MainScreenTableViewController: UITableViewController {
     }
     
     @objc private func loadList(notification: NSNotification){
-        getTask()
+        DispatchQueue.global(qos: .default).sync {
+            getTask()
+        }
         self.tableView.reloadData()
     }
 
@@ -84,7 +88,7 @@ class MainScreenTableViewController: UITableViewController {
         cell.dateLabel.text = MainScreenTableViewController.tasks[indexPath.row].date
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             DispatchQueue.global(qos: .default).sync {
