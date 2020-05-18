@@ -46,7 +46,7 @@ class MainScreenTableViewController: UITableViewController {
     
     func plusLayout() {
         plusButton.translatesAutoresizingMaskIntoConstraints = false
-        plusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        plusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
         plusButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40).isActive = true
         plusButton.widthAnchor.constraint(equalToConstant: 74).isActive = true
         plusButton.heightAnchor.constraint(equalToConstant: 74).isActive = true

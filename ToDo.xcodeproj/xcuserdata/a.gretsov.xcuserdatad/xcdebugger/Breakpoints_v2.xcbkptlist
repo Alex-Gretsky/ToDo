@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
             endingLineNumber = "191"
-            landmarkName = "datePickerChanged(sender:)"
+            landmarkName = "pencilImageLayout()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

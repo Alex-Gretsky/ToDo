@@ -40,7 +40,7 @@ class PopupViewController: UIViewController {
         done.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         done.layer.cornerRadius = 12
         done.backgroundColor = UIColor(named: "additionColor")
-        done.addTarget(self, action:  #selector(taskSaver), for: .touchUpInside)
+        done.addTarget(self, action: #selector(taskSaver), for: .touchUpInside)
         return done
     }()
     
@@ -52,6 +52,7 @@ class PopupViewController: UIViewController {
         task.layer.cornerRadius = 5
         task.attributedPlaceholder = NSAttributedString(string: "I want to...", attributes:[NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
         task.textAlignment = .center
+        task.becomeFirstResponder()
         task.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return task
     }()
