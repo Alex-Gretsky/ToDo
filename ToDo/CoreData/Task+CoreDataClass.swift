@@ -12,4 +12,11 @@ import CoreData
 
 @objc(Task)
 public class Task: NSManagedObject {
+    
+    @NSManaged public var date: String
+    @NSManaged public var title: String
+    
+    class func fetchRequest() -> NSFetchRequest<Task> {
+        return NSFetchRequest<Task>(entityName: "Task")
+    }
 }

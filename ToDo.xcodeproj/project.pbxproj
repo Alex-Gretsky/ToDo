@@ -19,6 +19,7 @@
 		F4C5FAAC2432594300731EC8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5FAAB2432594300731EC8 /* NavigationController.swift */; };
 		F4C5FAAF24325EB300731EC8 /* Artbrush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4C5FAAE24325EB300731EC8 /* Artbrush.ttf */; };
 		F4C5FAB42432676B00731EC8 /* MainScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5FAB32432676B00731EC8 /* MainScreenTableViewCell.swift */; };
+		F4DABD9D24759D37007BBBE8 /* MainScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DABD9C24759D37007BBBE8 /* MainScreenExtension.swift */; };
 		F4E59FEB24438AC100E05689 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E59FEA24438AC100E05689 /* CoreData.swift */; };
 		F4E65A6C2437BEAA002BA983 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E65A6B2437BEAA002BA983 /* PopupViewController.swift */; };
 		F4FC131D2469F1AD00C7D5C1 /* Caveat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4FC131C2469F1AD00C7D5C1 /* Caveat.ttf */; };
@@ -39,6 +40,7 @@
 		F4C5FAAB2432594300731EC8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F4C5FAAE24325EB300731EC8 /* Artbrush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Artbrush.ttf; sourceTree = "<group>"; };
 		F4C5FAB32432676B00731EC8 /* MainScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewCell.swift; sourceTree = "<group>"; };
+		F4DABD9C24759D37007BBBE8 /* MainScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenExtension.swift; sourceTree = "<group>"; };
 		F4E59FEA24438AC100E05689 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		F4E65A6B2437BEAA002BA983 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		F4FC131C2469F1AD00C7D5C1 /* Caveat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Caveat.ttf; sourceTree = "<group>"; };
@@ -78,8 +80,7 @@
 				F4C5FA902432577000731EC8 /* Products */,
 				F4C5FAAD24325C0F00731EC8 /* Resources */,
 				F4E59FEC244390F200E05689 /* CoreData */,
-				F4C5FAA9243258CC00731EC8 /* MainScreenTableViewController.swift */,
-				F4C5FAB32432676B00731EC8 /* MainScreenTableViewCell.swift */,
+				F4DABD9B24759A70007BBBE8 /* MainScreen */,
 				F4E65A6B2437BEAA002BA983 /* PopupViewController.swift */,
 				F4C5FAAB2432594300731EC8 /* NavigationController.swift */,
 				F4C5FAA02432577000731EC8 /* LaunchScreen.storyboard */,
@@ -91,8 +92,7 @@
 		F4C5FAAD24325C0F00731EC8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4C5FAAE24325EB300731EC8 /* Artbrush.ttf */,
-				F4FC131C2469F1AD00C7D5C1 /* Caveat.ttf */,
+				F4DABD9A24759988007BBBE8 /* Fonts */,
 				F4C5FA9E2432577000731EC8 /* Assets.xcassets */,
 				F4B774C9247195FA0039FF76 /* Colors.xcassets */,
 			);
@@ -106,6 +106,25 @@
 				F4C5FA942432577000731EC8 /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		F4DABD9A24759988007BBBE8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F4FC131C2469F1AD00C7D5C1 /* Caveat.ttf */,
+				F4C5FAAE24325EB300731EC8 /* Artbrush.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F4DABD9B24759A70007BBBE8 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F4C5FAA9243258CC00731EC8 /* MainScreenTableViewController.swift */,
+				F4C5FAB32432676B00731EC8 /* MainScreenTableViewCell.swift */,
+				F4DABD9C24759D37007BBBE8 /* MainScreenExtension.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 		F4E59FEC244390F200E05689 /* CoreData */ = {
@@ -202,6 +221,7 @@
 				F4C5FA9D2432577000731EC8 /* ToDo.xcdatamodeld in Sources */,
 				F4C5FAB42432676B00731EC8 /* MainScreenTableViewCell.swift in Sources */,
 				F4E65A6C2437BEAA002BA983 /* PopupViewController.swift in Sources */,
+				F4DABD9D24759D37007BBBE8 /* MainScreenExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

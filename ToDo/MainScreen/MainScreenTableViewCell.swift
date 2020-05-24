@@ -43,19 +43,19 @@ class MainScreenTableViewCell: UITableViewCell {
     
     //MARK: - Layout methods
     
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(dateLabel)
         addSubview(titleLabel)
     }
     
-    func titleLayout() {
+    private func titleLayout() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor, constant: 10).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
-    func dateLayout() {
+    private func dateLayout() {
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.widthAnchor.constraint(equalToConstant: 160).isActive = true
         dateLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5).isActive = true

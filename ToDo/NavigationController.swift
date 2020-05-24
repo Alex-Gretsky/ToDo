@@ -12,7 +12,11 @@ class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        nagationBarProperties()
+    }
+    
+    private func nagationBarProperties() {
         self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Artbrush", size: 24)]
-        self.navigationBar.barStyle = .blackTranslucent    
+        self.navigationBar.barStyle = .blackTranslucent
     }
 }

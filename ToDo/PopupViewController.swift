@@ -10,14 +10,14 @@ import UIKit
 
 class PopupViewController: UIViewController {
     
-    let popupView: UIView = {
+    private let popupView: UIView = {
         let popup = UIView()
         popup.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         popup.layer.cornerRadius = 12
         return popup
     }()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let title = UILabel()
         title.text = "New task"
         title.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -26,7 +26,7 @@ class PopupViewController: UIViewController {
         return title
     }()
     
-    let closeButton: UIButton = {
+    private let closeButton: UIButton = {
         let close = UIButton()
         close.layer.cornerRadius = 12
         close.setImage(#imageLiteral(resourceName: "closeButton"), for: .normal)
@@ -34,7 +34,7 @@ class PopupViewController: UIViewController {
         return close
     }()
     
-    let doneButton: UIButton = {
+    private let doneButton: UIButton = {
         let done = UIButton()
         done.setTitle("Done", for: .normal)
         done.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -44,7 +44,7 @@ class PopupViewController: UIViewController {
         return done
     }()
     
-    let taskTextField: UITextField = {
+    private let taskTextField: UITextField = {
         let task = UITextField()
         task.backgroundColor = .white
         task.layer.borderWidth = 1
@@ -57,7 +57,7 @@ class PopupViewController: UIViewController {
         return task
     }()
     
-    let pencilImage: UIImageView = {
+    private let pencilImage: UIImageView = {
         let pencil = UIImageView()
         pencil.image = #imageLiteral(resourceName: "pencil")
         pencil.backgroundColor = UIColor(named: "additionColor")
@@ -67,7 +67,7 @@ class PopupViewController: UIViewController {
         return pencil
     }()
     
-    let toolbar: UIToolbar = {
+    private let toolbar: UIToolbar = {
         let tool = UIToolbar()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(endEditing))
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -76,7 +76,7 @@ class PopupViewController: UIViewController {
         return tool
     }()
     
-    let datePicker: UIDatePicker = {
+    private let datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .dateAndTime
         picker.locale = Locale(identifier: Locale.preferredLanguages.first!)
@@ -84,7 +84,7 @@ class PopupViewController: UIViewController {
         return picker
     }()
     
-    let taskDateTextField: UITextField = {
+    private let taskDateTextField: UITextField = {
         let date = UITextField()
         date.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         date.layer.cornerRadius = 5
@@ -96,7 +96,7 @@ class PopupViewController: UIViewController {
         return date
     }()
     
-    let blurredBackground: UIVisualEffectView = {
+    private let blurredBackground: UIVisualEffectView = {
         let blur = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         return blur
     }()
@@ -113,7 +113,7 @@ class PopupViewController: UIViewController {
     
     // MARK: - Layout methods
         
-    func addSubviews() {
+    private func addSubviews() {
         view.addSubview(blurredBackground)
         view.addSubview(popupView)
         view.addSubview(taskDateTextField)
@@ -124,7 +124,7 @@ class PopupViewController: UIViewController {
         view.addSubview(pencilImage)
     }
     
-    func addLayouts() {
+    private func addLayouts() {
         blurLayout()
         popupViewLayout()
         titleLabelLayout()
@@ -135,12 +135,12 @@ class PopupViewController: UIViewController {
         pencilImageLayout()
     }
     
-    func blurLayout() {
+    private func blurLayout() {
         blurredBackground.frame = view.bounds
         blurredBackground.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
-    func taskDateTextFieldLayout() {
+    private func taskDateTextFieldLayout() {
         taskDateTextField.translatesAutoresizingMaskIntoConstraints = false
         taskDateTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         taskDateTextField.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 20).isActive = true
@@ -148,7 +148,7 @@ class PopupViewController: UIViewController {
         taskDateTextField.topAnchor.constraint(equalTo: taskTextField.bottomAnchor, constant: 15).isActive = true
     }
     
-    func popupViewLayout() {
+    private func popupViewLayout() {
         popupView.translatesAutoresizingMaskIntoConstraints = false
         popupView.widthAnchor.constraint(equalToConstant: 360).isActive = true
         popupView.topAnchor.constraint(equalTo: view.topAnchor, constant: 190).isActive = true
@@ -156,13 +156,13 @@ class PopupViewController: UIViewController {
         popupView.bottomAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: 20).isActive = true
     }
     
-    func titleLabelLayout() {
+    private func titleLabelLayout() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.centerXAnchor.constraint(equalTo: popupView.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: pencilImage.bottomAnchor, constant: 35).isActive = true
     }
     
-    func closeButtonLayout() {
+    private func closeButtonLayout() {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.centerYAnchor.constraint(equalTo: popupView.topAnchor, constant: 30).isActive = true
         closeButton.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -15).isActive = true
@@ -170,7 +170,7 @@ class PopupViewController: UIViewController {
         closeButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
     }
     
-    func taskTextFieldLayout() {
+    private func taskTextFieldLayout() {
         taskTextField.translatesAutoresizingMaskIntoConstraints = false
         taskTextField.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 20).isActive = true
         taskTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -178,7 +178,7 @@ class PopupViewController: UIViewController {
         taskTextField.centerYAnchor.constraint(equalTo: popupView.centerYAnchor).isActive = true
     }
     
-    func doneButtonLayout() {
+    private func doneButtonLayout() {
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         doneButton.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 20).isActive = true
@@ -186,7 +186,7 @@ class PopupViewController: UIViewController {
         doneButton.topAnchor.constraint(equalTo: taskDateTextField.bottomAnchor, constant: 20).isActive = true
     }
     
-    func pencilImageLayout() {
+    private func pencilImageLayout() {
         pencilImage.translatesAutoresizingMaskIntoConstraints = false
         pencilImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         pencilImage.centerYAnchor.constraint(equalTo: popupView.topAnchor).isActive = true
@@ -196,15 +196,15 @@ class PopupViewController: UIViewController {
     
     // MARK: - Selector methods
     
-    @objc func datePickerChanged(sender: UIDatePicker) {
+    @objc private func datePickerChanged(sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM.dd.yyyy HH:mm"
         taskDateTextField.text = formatter.string(from: datePicker.date)
         
     }
     
-    @objc func taskSaver() {
-        guard taskTextField.text?.count != 0 else {
+    @objc private func taskSaver() {
+        guard taskTextField.text?.isEmpty == false else {
             taskTextField.attributedPlaceholder = NSAttributedString(string: "I want to...", attributes:[NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)])
             return
         }
@@ -221,11 +221,11 @@ class PopupViewController: UIViewController {
         cancelButtonPressed(self)
     }
     
-    @objc func endEditing() {
+    @objc private func endEditing() {
         view.endEditing(true)
     }
     
-    @objc func cancelButtonPressed(_ sender: Any) {
+    @objc private func cancelButtonPressed(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         dismiss(animated: true, completion: nil)
     }
