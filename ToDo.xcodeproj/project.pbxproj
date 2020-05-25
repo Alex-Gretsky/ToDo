@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F439207D244B0B640007975C /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439207B244B0B640007975C /* Task+CoreDataClass.swift */; };
-		F439207E244B0B640007975C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439207C244B0B640007975C /* Task+CoreDataProperties.swift */; };
 		F4B774CA247195FA0039FF76 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B774C9247195FA0039FF76 /* Colors.xcassets */; };
 		F4C5FA932432577000731EC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5FA922432577000731EC8 /* AppDelegate.swift */; };
 		F4C5FA952432577000731EC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5FA942432577000731EC8 /* SceneDelegate.swift */; };
@@ -19,7 +18,6 @@
 		F4C5FAAC2432594300731EC8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5FAAB2432594300731EC8 /* NavigationController.swift */; };
 		F4C5FAAF24325EB300731EC8 /* Artbrush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4C5FAAE24325EB300731EC8 /* Artbrush.ttf */; };
 		F4C5FAB42432676B00731EC8 /* MainScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5FAB32432676B00731EC8 /* MainScreenTableViewCell.swift */; };
-		F4DABD9D24759D37007BBBE8 /* MainScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DABD9C24759D37007BBBE8 /* MainScreenExtension.swift */; };
 		F4E59FEB24438AC100E05689 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E59FEA24438AC100E05689 /* CoreData.swift */; };
 		F4E65A6C2437BEAA002BA983 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E65A6B2437BEAA002BA983 /* PopupViewController.swift */; };
 		F4FC131D2469F1AD00C7D5C1 /* Caveat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4FC131C2469F1AD00C7D5C1 /* Caveat.ttf */; };
@@ -27,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		F439207B244B0B640007975C /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F439207C244B0B640007975C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4B774C9247195FA0039FF76 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F4C5FA8F2432577000731EC8 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C5FA922432577000731EC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +37,6 @@
 		F4C5FAAB2432594300731EC8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F4C5FAAE24325EB300731EC8 /* Artbrush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Artbrush.ttf; sourceTree = "<group>"; };
 		F4C5FAB32432676B00731EC8 /* MainScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewCell.swift; sourceTree = "<group>"; };
-		F4DABD9C24759D37007BBBE8 /* MainScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenExtension.swift; sourceTree = "<group>"; };
 		F4E59FEA24438AC100E05689 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		F4E65A6B2437BEAA002BA983 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		F4FC131C2469F1AD00C7D5C1 /* Caveat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Caveat.ttf; sourceTree = "<group>"; };
@@ -122,7 +118,6 @@
 			children = (
 				F4C5FAA9243258CC00731EC8 /* MainScreenTableViewController.swift */,
 				F4C5FAB32432676B00731EC8 /* MainScreenTableViewCell.swift */,
-				F4DABD9C24759D37007BBBE8 /* MainScreenExtension.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -131,9 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				F439207B244B0B640007975C /* Task+CoreDataClass.swift */,
-				F439207C244B0B640007975C /* Task+CoreDataProperties.swift */,
-				F4C5FA9B2432577000731EC8 /* ToDo.xcdatamodeld */,
 				F4E59FEA24438AC100E05689 /* CoreData.swift */,
+				F4C5FA9B2432577000731EC8 /* ToDo.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -214,14 +208,12 @@
 				F4C5FA932432577000731EC8 /* AppDelegate.swift in Sources */,
 				F4C5FA952432577000731EC8 /* SceneDelegate.swift in Sources */,
 				F4C5FAAC2432594300731EC8 /* NavigationController.swift in Sources */,
-				F439207E244B0B640007975C /* Task+CoreDataProperties.swift in Sources */,
 				F4E59FEB24438AC100E05689 /* CoreData.swift in Sources */,
 				F4C5FAAA243258CC00731EC8 /* MainScreenTableViewController.swift in Sources */,
 				F439207D244B0B640007975C /* Task+CoreDataClass.swift in Sources */,
 				F4C5FA9D2432577000731EC8 /* ToDo.xcdatamodeld in Sources */,
 				F4C5FAB42432676B00731EC8 /* MainScreenTableViewCell.swift in Sources */,
 				F4E65A6C2437BEAA002BA983 /* PopupViewController.swift in Sources */,
-				F4DABD9D24759D37007BBBE8 /* MainScreenExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
